@@ -13,6 +13,7 @@ import {
 import React, { useRef, useState } from 'react';
 import { BuildOptions, buildDataset, fmt } from '../crypto';
 import { generateSampleExcelBlob, parseExcelFile, REQUIRED_FIELDS } from '../excelParser';
+import { saveActiveDatasetToCloud } from '../firebase';
 import { EncryptedDataset, StudentRow } from '../types';
 
 interface AdminBuilderProps {
@@ -139,12 +140,14 @@ export const AdminBuilder: React.FC<AdminBuilderProps> = ({
         setEncryptProgress({ current: cur, total: tot });
       });
 
-      // Persist permanently into browser storage so data NEVER resets on refresh
+      // Persist permanently into Cloud database (Firestore) and browser storage
+      // so all devices opening the Vercel link see the exact same updated data!
+      await saveActiveDatasetToCloud(dataset);
       localStorage.setItem('knowvia_active_dataset', JSON.stringify(dataset));
       setBuiltDataset(dataset);
       onPublishDataset(dataset);
     } catch (err: unknown) {
-      setBuildError('Encryption failed: ' + ((err as Error)?.message || 'Unknown error'));
+      setBuildError('Encryption or sync failed: ' + ((err as Error)?.message || 'Unknown error'));
     } finally {
       setIsEncrypting(false);
     }
@@ -521,11 +524,11 @@ export const AdminBuilder: React.FC<AdminBuilderProps> = ({
           <div className="flex items-center gap-2 mb-2 text-[#37e6a0]">
             <CheckCircle2 className="w-5 h-5" />
             <h3 className="text-lg font-bold font-head text-[#e9effd]">
-              3 · Results Encrypted &amp; Permanently Saved! 🎉
+              3 · Results Encrypted &amp; Synced to Cloud! 🎉
             </h3>
           </div>
           <p className="text-sm text-[#8e9fc6]">
-            <b>{builtDataset.records.length}</b> records encrypted and stored. This dataset is now permanently active in the portal and will <b className="text-emerald-400">never reset</b> on page refreshes, until you upload a new Excel file.
+            <b>{builtDataset.records.length}</b> records encrypted and synced to the cloud database. This dataset is now live across <b className="text-[#3de8ff]">ALL devices</b> opening your Vercel link and will <b className="text-emerald-400">never reset</b> until you upload a new Excel file here.
           </p>
 
           <div className="mt-5 flex flex-wrap gap-3">

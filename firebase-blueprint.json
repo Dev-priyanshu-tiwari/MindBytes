@@ -1,0 +1,26 @@
+{
+  "entities": {
+    "quiz_data": {
+      "title": "Quiz Data",
+      "description": "Encrypted results and metadata for MindBytes quiz",
+      "type": "object",
+      "properties": {
+        "v": { "type": "number", "description": "Version number" },
+        "salt": { "type": "string", "description": "Global file salt" },
+        "iter": { "type": "number", "description": "PBKDF2 iteration count" },
+        "meta": { "type": "object", "description": "Quiz metadata and statistics" },
+        "records": { "type": "array", "description": "List of AES-GCM encrypted student records" },
+        "updatedAt": { "type": "string", "description": "ISO timestamp of last update" }
+      },
+      "required": ["v", "salt", "iter", "meta", "records"]
+    }
+  },
+  "firestore": {
+    "collections": {
+      "quiz_data": {
+        "schema": "quiz_data",
+        "description": "Collection holding active quiz results"
+      }
+    }
+  }
+}

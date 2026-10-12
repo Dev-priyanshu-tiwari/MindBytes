@@ -16,6 +16,7 @@ import { StatsBar } from './components/StatsBar';
 import { StudentLookup } from './components/StudentLookup';
 import { openRecord } from './crypto';
 import { createDefaultDataset } from './data/demoData';
+import { fetchActiveDatasetFromCloud, saveActiveDatasetToCloud } from './firebase';
 import { DecryptedStudentResult, EncryptedDataset } from './types';
 
 const STORAGE_KEY = 'knowvia_active_dataset';
@@ -34,7 +35,7 @@ export default function App() {
   const [lookupError, setLookupError] = useState<string | null>(null);
   const [currentResult, setCurrentResult] = useState<DecryptedStudentResult | null>(null);
 
-  // Synchronize route & boot dataset (permanently saved data takes precedence)
+  // Synchronize route & boot dataset (Cloud sync ensures all devices see the same data on Vercel)
   useEffect(() => {
     const syncRoute = () => {
       const isHashAdmin = window.location.hash.toLowerCase() === '#admin';
@@ -46,7 +47,24 @@ export default function App() {
 
     // Boot dataset
     async function initData() {
-      // 1. First priority: Check permanently saved uploaded dataset from admin
+      // 1. Highest priority: Shared Cloud Database (Firestore)
+      // This guarantees that mobile, desktop, and all visitors to the Vercel link get the exact same results!
+      try {
+        const cloudData = await fetchActiveDatasetFromCloud();
+        if (cloudData && cloudData.v === 1 && Array.isArray(cloudData.records)) {
+          setDataset(cloudData);
+          try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(cloudData));
+          } catch {
+            // ignore
+          }
+          return;
+        }
+      } catch (err) {
+        console.warn('Cloud sync unavailable, checking local storage:', err);
+      }
+
+      // 2. Second priority: Local storage cache
       try {
         const stored = localStorage.getItem(STORAGE_KEY);
         if (stored) {
@@ -60,7 +78,7 @@ export default function App() {
         console.error('Failed to parse saved dataset:', err);
       }
 
-      // 2. Second priority: Check if static results.json file exists
+      // 3. Third priority: Static results.json file
       try {
         const res = await fetch('results.json', { cache: 'no-store' });
         if (res.ok) {
@@ -74,7 +92,7 @@ export default function App() {
         // Fallback
       }
 
-      // 3. Fallback: load initial default dataset only if no uploaded data exists
+      // 4. Fallback default dataset
       const defaultData = await createDefaultDataset();
       setDataset(defaultData);
     }
@@ -160,13 +178,17 @@ export default function App() {
     sessionStorage.setItem('knowvia_admin_auth', 'true');
   };
 
-  // Called when admin uploads Excel and builds dataset: persists permanently!
-  const handlePublishDataset = (newDataset: EncryptedDataset) => {
+  // Called when admin uploads Excel and builds dataset: persists permanently to Cloud Firestore & localStorage
+  const handlePublishDataset = async (newDataset: EncryptedDataset) => {
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(newDataset));
     } catch (e) {
       console.error('Storage quota exceeded or storage error:', e);
     }
+
+    // Save to Firestore so every device opening the Vercel link gets it!
+    await saveActiveDatasetToCloud(newDataset);
+
     setDataset(newDataset);
     setCurrentResult(null);
   };
@@ -175,6 +197,7 @@ export default function App() {
     localStorage.removeItem(STORAGE_KEY);
     setCurrentResult(null);
     const defaultData = await createDefaultDataset();
+    await saveActiveDatasetToCloud(defaultData);
     setDataset(defaultData);
   };
 
@@ -233,7 +256,7 @@ export default function App() {
                 Organizer Studio Active
               </span>
               <span className="text-xs text-[#8e9fc6] hidden sm:inline">
-                · Spreadsheet Encryptor &amp; Settings
+                · Cloud Synced across all devices
               </span>
             </div>
 

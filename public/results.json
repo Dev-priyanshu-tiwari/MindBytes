@@ -1,0 +1,109 @@
+{
+  "v": 1,
+  "salt": "cyInB8FUO6ek6jncdMWLUQ==",
+  "iter": 100000,
+  "meta": {
+    "title": "MindBytes – The AI Quiz",
+    "total": 50,
+    "participants": 10,
+    "average": 34.7,
+    "highest": 46,
+    "releaseAt": null,
+    "sections": {
+      "easy": 20,
+      "medium": 20,
+      "hard": 10
+    },
+    "branches": [
+      "AI-ML",
+      "CSE",
+      "ECE",
+      "EE",
+      "IT",
+      "ME"
+    ],
+    "top": [
+      {
+        "name": "Aarav Sharma",
+        "branch": "CSE",
+        "score": 46,
+        "rank": 1
+      },
+      {
+        "name": "Diya Verma",
+        "branch": "IT",
+        "score": 44,
+        "rank": 2
+      },
+      {
+        "name": "Kabir Singh",
+        "branch": "CSE",
+        "score": 44,
+        "rank": 2
+      }
+    ],
+    "generatedAt": "2026-10-12T21:31:29.072Z"
+  },
+  "records": [
+    {
+      "id": "fb37e4b79b388f27fb0a54edd3f5f8240fba879c40ff484eeb55996f9ca5f7bb",
+      "s": "WsVW1y7D7Iodg8Ndlb8zng==",
+      "iv": "I628H6lG678ulfQO",
+      "d": "pEutch9FSIsa6t6+t2yJMOxxJmPmRAK+mvIm34V+FQ0M3g9BBkwTKCciTDXIy8r/on/wdSOz9mo1RQAIk7BcTbv5rPflS+VkUmtW/djU7Wb3KeXP31T6I8ixFpp0ktcLpXmxHZ9ug0O6J1cUjBjiWSCvCnKRffl6UqJ4B1DYhqs/qnUu+QznJZirODIWQmErh7LKKXz3mXDBIabiH8t1O789AOJayVAGLwlc6SjUzioaA7bBvmd1GxZsEpcrZCKSkzQ="
+    },
+    {
+      "id": "b8bbcb44003a9c92a3c6d882a37c1c388e670566e7ea2c54dd6fc99b92eddecd",
+      "s": "JtZpPZPef0LCkSO+gAUTxw==",
+      "iv": "gDF1sUfxfGO9F5rL",
+      "d": "ky0FZ1dj5TybCpCf/09OKpCPkPFr+B4FyWZR2gzfZVCJ3UYVONnBzBCk2vLWw5UILMZmXUnR2VNToHIZSPStszhZ8y5s1sa6edNJOwtRVY1wn1U1qg21Wd+TDWf5v1UDEVoer3TMQ2DtmDaRmrH9RFXx6zfnOXNVeii3LHWbBgXgH3XlBspFhw6SHW8YfpjcRniafsIe7oIZp/l+pdeBOvjZZIKK9dyDUHxTErLF8eOCWOQQEKkwwdZbO1Yc3ew6M56yRxvwgBclWA=="
+    },
+    {
+      "id": "c61c4cd43c50eac43ef79c84024123b7e0840399d5f0d772323c6c96990bb6c0",
+      "s": "bx3kU2uPhItrTVhLlwQbzA==",
+      "iv": "HO2dBmp5asK7r+0K",
+      "d": "pB0YDVbKOfNWd8L4A/NAkKJpnB/ER21dh1igHuBjtOfh1lNFE05Jsct3Bpv1Z32rwsHCQ/AAZMiVA5xM0byEju6/m+5m81hGzsC9Ss3IQn3SRM9CQPm4ZnN96bQ2ZJYQCGRhPbmddnwdk2SM/KHaYRGqQDSy2xqYLuSLmSFrS5JVJPVMajV5HkYWr1UcCHSW+YGJIg1ktTpuUSY3DvM0CL4dK0cg/79S0rU+9Kr1/IGZ5mACaamVMRahTgnrJZuNhVJZ7wGMnqcF+oHB"
+    },
+    {
+      "id": "44d2c96845d3ee60949ae112b574c0bfc898f6ea659f2cf836c9bedfe062faac",
+      "s": "Bn7tOTeXV/TwUUFFPjs/tg==",
+      "iv": "BN6z2v9FT+dRf3GD",
+      "d": "OgfolaiBKXYyKu2UatV5T5c70NMERsS43GUBIKX/LqqpwTBBRSD7aZUp9jzLmweMXFQ8+EEEh60hMJcHjoA2+RgzhdWCd4+baovjaDOPEqL+jT9OK0dHfWZyEqzVENaIA2U9TshRYgyTjOZ1wmJ3EoSaXS2xn3bG9kbwuK3zypMe7PcdMBvMWcKQlOlrimtqKg20iW2Bs69JBbf7fDBy/RtSJ69Ypto2lf7iREuosT2H5M4YKuyMUFZljSm26w2AVNOeGfWLRaITMJqWndqlhbXuzC0="
+    },
+    {
+      "id": "63423b943d6d1a9cb0a39f714d592791ff43f17d0499d4ceffc9f48c9ffd1b8c",
+      "s": "m0tO2z3L1EFGAgpLUIABzQ==",
+      "iv": "EqLtj9iiAJDRnEgE",
+      "d": "arrHoUL2YD3vK7xxd52Oi8Hhku9XaYRNZJBdwPEMU7so3o9KjckfblZKuZ1N+QUji4R23ruSjEa78i5g+TSNotrTzluoKziFcnhV09tW6WH9dcDtb4VKyILfUhlQA49SihxBC5Ba9EconIHGmZiWdBxmmSlnn1tTj+PDxekl41EHYkvUVbNVyol4tn5jaMU7o/fBKFJgkkqnwP6klcQIqbBcUO3/GhqDOo4NS/T6VziPHEYSeYX29fKvXkXFDCZt202Z"
+    },
+    {
+      "id": "91c1dcd284863f766d6036261b6442648f1754a0fc76a1a54a56c52918c07e16",
+      "s": "tUObvqpokcxe0UU4TApsuA==",
+      "iv": "XUbSLuj1hzBAmKuB",
+      "d": "G5QhPlbY5HcRjCxsWSNd8Ea2BqGiB2x9IjFOAuQGY0E7cEYAju/v53FT6jg834O3k1UZ7ePS6VI1P61sWUffDpIsiISRosC13QiiBZtDHW2UP/59IwlQrz5g7wNpOehfjWlPgeyIWccbjFo86gsGRnXv616Wgt/0mLiEGewwwhHFxugXP5jEA4JW1qizM5hoKFDeVJifMbZk1RI2ING3DXzyPiXyyWhRSuBGJfj7dd/5g2do5JaLvVWQ+chHGZrqmhglBvIhJAaZoJddtUwy8A=="
+    },
+    {
+      "id": "762f67024d3f080405a2c4b04a9add6e6f7b9cdfbaa7a58564845686d7a1188f",
+      "s": "c2kcwRNTjUe6zrel3A/N/Q==",
+      "iv": "Fo2qIokBPZUCWBvK",
+      "d": "+DlwU/bysBXAS3peEu+U+EGuNB6qNEEA7w2qMUWOnxICz942fvZQveD59cgEic40Q3EiWwc5MrHc/Ir/vMxl+9drkeLp41oHq3leImL4gkrLOv0tBdBqODMdDlghUx53H6KvbvA/LbGluX6CXid90PU+hm1Nc511LFZIHwm3rDsjD/+7jXoMh0tIN73OhMvhC3sWcutKW2ozoSO9ARZacv1Jk0jRQLFoyE3XXXkiI0CH8yAtKapUgbufKRn5y8JiEwqpz7zLzNyPTg=="
+    },
+    {
+      "id": "25728b19d477d665902fa77746e581f32910730d22314b98158feef265c50e4a",
+      "s": "vuhcnbSYZE/c2pwGcbJkxw==",
+      "iv": "QPi/jUBHa44fUDQQ",
+      "d": "L/BOuLULPQVV970urXf1O1GrHZyRgUpfwAiib2Lnhvc6QExij+c+PnepYKWK+tAOkJkXr5ShuXOZv9TfJNoRgMGSuhCJga6C15AKO5iF41aOqEVHvnd2TDwhFecSg7zsvLaFHeF95u/kCh10nmhaaA8sq3IaGiPNno2BcQO3k+kYkhoSe3cfjYbdav2GhN3ZZX+QMCk2VF6ReLYhmEzhfnphkvvKRB+oXTMS2uuldXXZTu2YobfeQTFec4vIk5V4WP8Xwcc5hQ=="
+    },
+    {
+      "id": "131b50534a4c6d9c3fce308c73fbfc768245d28d5c3d3e6cebd00e48aa7b010a",
+      "s": "/DQ91nFuzvRZN3T8zrynLQ==",
+      "iv": "zR+CzyzotMW2Ydy6",
+      "d": "1c0SB5Vb3xbnODRE8kAO5ngsBmRkr8xkEoQICHjcjcyRW1yivAMYE6sBKzgZDYwP22WZ6rGhHu7AI5y0sAbeYEx067fG/sfVLum/FTPL0o+PbYpQkNLOt2AGn1ayxnoSyy0d2CpcsoTEwZbTe+vTT8sFtAIt3oKnZV8hox2+1vhxcK/K9U0j4FYNC/19se2U4C5kbb4+TkBqjmvJ6Q7G3yLil2BO/97L67jvjl9cevwkcafvzn7aAkWNYupGLL+ADhfKzI/rBGD0RA=="
+    },
+    {
+      "id": "b45ca40c3604c41b46110700e5da925a0fddae08153fc40e2dcadefe8a889177",
+      "s": "gfyW/Djqx8VfFHper+z/0A==",
+      "iv": "cNpFDz/+N2bqCQFW",
+      "d": "itckRmTcqU1aIqDP3yexTlTNeUlyBiOZ3RNO4eYHyntbrzE3sYxoVSH1CW9SG3EKCIZANQFRpeGBfk/CTFaI7DV5vNNZzRbQhtW9WmRHx+tB6l6yt8XxPlGxSZf31MnvP/PW5s0tOeRokW6fDr5HTS7JbUumTCkDWT8uHeTBNhh2aTpz+QcMDThf52dQAzrCaRd3Zeys9etBWFBvjk582wwrzbJoOnLAH9eUM0JDqjJ0ioTn454xOc0zDrJiNqhY1Ehc5rPop+3XTe5M"
+    }
+  ]
+}
