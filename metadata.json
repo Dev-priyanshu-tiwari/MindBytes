@@ -1,0 +1,8 @@
+{
+  "name": "MindBytes AI Quiz Results",
+  "description": "Secure, zero-knowledge encrypted result portal for MindBytes – The AI Quiz by KNOWVIA Quiz Club, featuring instant score decoding, interactive performance metrics, Hall of Fame, and Excel result builder.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
