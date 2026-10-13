@@ -113,7 +113,7 @@ export const StudentLookup: React.FC<StudentLookupProps> = ({
       <div className="mt-5 flex items-center gap-2 text-xs text-[#8e9fc6]">
         <Lock className="w-4 h-4 text-[#37e6a0] shrink-0" />
         <span>
-          Every result is encrypted using client-side AES-256-GCM. It can only be unlocked with your registered email and branch credentials.
+          Every result is encrypted. It can only be unlocked with your registered email and branch credentials.
         </span>
       </div>
     </div>
